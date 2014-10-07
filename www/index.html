@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="App">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>GitHub</title>
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/app.js"></script>
+</head>
+
+<body ng-controller="Github">
+
+
+<ion-header-bar class="bar bar-header bar-energized">
+    <h1 class="title">Github Search</h1>
+</ion-header-bar>
+
+<ion-content>
+    <form name="searchUser" ng-submit="search(username)">
+        <div class="list list-inset">
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" required placeholder="Github User" ng-model="username" />
+            </label>
+        </div>
+    </form>
+
+    <div class="list card">
+
+        <div class="item item-avatar" ng-cloak ng-hide="!user">
+            <img data-ng-src="https://avatars2.githubusercontent.com/u/{{user.id}}">
+            <ul>
+                <li><b>Login Name:</b> {{ user.login }}</li>
+                <li><b>Name:</b> {{ user.name }}</li>
+                <li><b>Email:</b> {{user.email }}</li>
+                <li><b>Company:</b> {{user.company }}</li>
+                <li><b>Join Date:</b> {{user.created_at.slice(0, 10) }}</li>
+
+            </ul>
+        </div>
+
+    </div>
+
+    <div ng-cloak ng-hide="user">{{ message }}</div>
+</ion-content>
+</body>
+
+</html>
+
