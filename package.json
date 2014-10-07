@@ -1,6 +1,6 @@
 {
   "name": "github-ionic",
-  "description": "basic ionic-based application to search users in github ",
+  "description": "basic ionic-based application to search users information in github ",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
