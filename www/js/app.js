@@ -12,7 +12,7 @@ var Github = function($scope, $http) {
                 if (status == 404) {
 
                 }
-                $scope.message = "There was a network error/user unavailable Try again.";
+                $scope.message = swal("cannot fetch information","There was a network error/user unavailable Try again.", "error");
 
 
 
